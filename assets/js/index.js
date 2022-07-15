@@ -19,3 +19,13 @@ function setBoard() {
         [0, 0, 0, 0]
     ]
 }
+// for loop to handle tile numbers on board
+for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < columns; c++) {
+        let tile = document.createElement("div");
+        tile.id = r.toString() + "-" + c.toString();
+        let number = board[r][c];
+        updateTile(tile, number);
+        document.getElementById("board").append(tile);
+    }
+}
